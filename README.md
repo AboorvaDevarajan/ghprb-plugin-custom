@@ -1,5 +1,23 @@
 # GitHub Pull Request Builder Plugin
 
+This is a custom version of Ghprb plugin that works on the latest jenkins without draining the requests to github when polling jobs are used.
+(clone of v1.36.2 with the object serialization fix cherry-picked)
+
+To build the plugin,
+
+Login as sudo user,
+
+1. Install maven
+
+2. mvn hpi:run
+
+   You can run (and debug) a plugin at development time in your local machine. From a shell command, execute.
+   The Maven Jenkins plugin will start a local Jenkins sandbox to emulate the CI server environment.
+
+3. mvn package
+   When you are happy with your implementation and have a stable version, you can package the plugin running the above command.
+   It will create the .hpi installer in the target directory of the project. It is ready to be deployed on any Jenkins server the usual way.
+
 This Jenkins plugin builds pull requests from GitHub and will report the results directly to the pull request via
 the [GitHub Commit Status API](http://developer.github.com/v3/repos/statuses/)
 
